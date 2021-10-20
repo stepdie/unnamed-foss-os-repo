@@ -15,13 +15,14 @@ I am not actually doing much of the work as of yet since I am new to the scene. 
 ## Building
 
 ### Requirements
-> cmake >3.10  
 > git  
 > posix shell  
 > gnu make  
-> xorriso
 
 ### Instructions
-running the mkBuild.sh script in scripts will generate a build folder with a mkISO.sh script inside
-running the mkISO.sh script in the build folder will generate a qemu runnable iso
-
+git submodule init
+cd toybox
+make defconfig
+make menuconfig # enable the toybox shell in the pending section   
+make 
+make root LINUX=$PATH_TO_LINUX_KERNEL
